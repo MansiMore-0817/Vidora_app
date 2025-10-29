@@ -1,16 +1,112 @@
-# React + Vite
+🎥 Vidora — Video Conferencing App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+<p align="center"> <b>Modern Video Conferencing App built with MERN + WebRTC (Peer-to-Peer)</b><br/> <i>Connect. Collaborate. Communicate. — all in real time ⚡</i> </p>
 
-Currently, two official plugins are available:
+<p align="center"> <img src="https://img.shields.io/badge/MERN-Stack-4DB33D?style=for-the-badge&logo=mongodb&logoColor=white" /> <img src="https://img.shields.io/badge/WebRTC-Enabled-blue?style=for-the-badge&logo=webrtc&logoColor=white" /> <img src="https://img.shields.io/badge/Socket.io-Real--time-black?style=for-the-badge&logo=socket.io&logoColor=white" /> <img src="https://img.shields.io/badge/React-Dynamic-61DAFB?style=for-the-badge&logo=react&logoColor=black" /> <img src="https://img.shields.io/badge/Node.js-Fast-339933?style=for-the-badge&logo=node.js&logoColor=white" /> </p>
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+🌐 Overview
 
-## React Compiler
+Vidora is a full-stack video conferencing platform built using MongoDB, Express, React, and Node.js, with WebRTC for peer-to-peer streaming and Socket.io for real-time communication.
+It allows users to host or join meetings, chat live, and share screens — all from the browser.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+✨ Features
 
-## Expanding the ESLint configuration
+✅ Peer-to-Peer Video Calls — Real-time connections using WebRTC
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+💬 In-Meeting Chat — Instant messaging powered by Socket.io
+
+🪄 Create & Join Rooms — Unique room IDs for each meeting
+
+🔐 Authentication — JWT-secured login & registration
+
+🖥️ Screen Sharing — Share your screen with participants
+
+🌙 Dark Modern UI — Responsive and intuitive interface
+
+⚡ Lightweight & Scalable — Built for performance
+
+🧠 Tech Stack
+
+Frontend:
+React.js • Tailwind CSS • Socket.io Client • WebRTC
+
+Backend:
+Node.js • Express.js • MongoDB (Mongoose) • Socket.io • JWT
+
+Architecture:
+
+Peer-to-peer connections via WebRTC
+
+Signaling handled by Socket.io
+
+REST APIs for users & meeting management
+
+⚙️ Installation & Setup
+1️⃣ Clone the Repository
+git clone https://github.com/<your-username>/vidora.git
+cd vidora
+
+2️⃣ Install Dependencies
+
+For backend:
+
+cd Backend
+npm install
+
+For frontend:
+
+cd ../Frontend
+npm install
+
+3️⃣ Create Environment Variables
+
+In your Backend folder, create a .env file and add:
+
+PORT=5000
+MONGO_URI=your_mongodb_connection_string
+JWT_SECRET=your_jwt_secret
+
+4️⃣ Run the App
+
+Open two terminals:
+
+Backend:
+
+cd Backend
+npm run dev
+
+Frontend:
+
+cd Frontend
+npm start
+
+Then visit 👉 http://localhost:3000
+
+🚀 Future Enhancements
+
+📅 Meeting scheduling & calendar integration
+
+📁 Cloud recording & storage
+
+📲 PWA (mobile support)
+
+🧏‍♀️ AI-based noise suppression
+
+🖼️ Preview
+
+Add screenshots or GIFs here once UI is ready (e.g., Home page, Meeting room, Chat interface).
+
+🧑‍💻 Author
+
+👩‍💻 Mansi More
+💼 MERN Stack Developer | Real-time Web App Enthusiast
+📧 your.email@example.com
+
+🌐 Portfolio
+• LinkedIn
+
+🪪 License
+
+This project is licensed under the MIT License — feel free to use and modify it.
+
+<p align="center"> <b>Vidora</b> — Where collaboration meets simplicity 💫 </p>
