@@ -80,7 +80,7 @@ Frontend:
 cd Frontend
 npm start
 
-Then visit 👉 http://localhost:3000
+Then visit 👉 URL...Loading
 
 🚀 Future Enhancements
 
@@ -94,13 +94,13 @@ Then visit 👉 http://localhost:3000
 
 🖼️ Preview
 
-Add screenshots or GIFs here once UI is ready (e.g., Home page, Meeting room, Chat interface).
+Loading...
 
 🧑‍💻 Author
 
 👩‍💻 Mansi More
 💼 MERN Stack Developer | Real-time Web App Enthusiast
-📧 your.email@example.com
+📧 moremansi1707@gmail.com
 
 🌐 Portfolio
 • LinkedIn
