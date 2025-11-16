@@ -2,7 +2,7 @@
   "name": "backend",
   "version": "1.0.0",
   "main": "index.js",
-  "type": "module",
+  "type": "module", 
   "scripts": {
     "dev": "nodemon src/app.js",
     "start": "nodemon src/app.js",
@@ -19,7 +19,7 @@
     "express": "^5.1.0",
     "http-status": "^2.1.0",
     "mongoose": "^8.19.2",
-    "nodemon": "^3.1.10",
+    "nodemon": "^3.1.11",
     "socket.io": "^4.8.1"
   }
 }
