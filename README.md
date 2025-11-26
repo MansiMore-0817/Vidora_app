@@ -40,73 +40,96 @@ Peer-to-peer connections via WebRTC
 Signaling handled by Socket.io
 
 REST APIs for users & meeting management
+# Vidora
 
-⚙️ Installation & Setup
-1️⃣ Clone the Repository
-git clone https://github.com/<your-username>/vidora.git
-cd vidora
+Professional, minimal README for the Vidora video conferencing project.
 
-2️⃣ Install Dependencies
+Vidora is a browser-based video conferencing app using WebRTC for peer-to-peer media and Socket.IO for signaling. The project includes a React frontend (Vite) and a Node/Express backend that handles authentication and signaling.
 
-For backend:
+## Key Features
 
+- Sign in / Sign up (basic auth flows)
+- Real-time signaling with Socket.IO
+- Peer-to-peer video (WebRTC) with a responsive multi-tile grid
+- In-meeting chat and optional screen sharing
+
+## Repo Layout
+
+- `Backend/` — Node.js + Express + Socket.IO server
+- `Frontend/Vidora/` — React (Vite) app with UI components and WebRTC logic
+
+## Quick Start (development)
+
+Prerequisites:
+- Node.js (16+)
+- npm or yarn
+- (Optional) MongoDB for persistent user storage
+
+1) Backend
+
+```powershell
 cd Backend
 npm install
-
-For frontend:
-
-cd ../Frontend
-npm install
-
-3️⃣ Create Environment Variables
-
-In your Backend folder, create a .env file and add:
-
-PORT=5000
-MONGO_URI=your_mongodb_connection_string
-JWT_SECRET=your_jwt_secret
-
-4️⃣ Run the App
-
-Open two terminals:
-
-Backend:
-
-cd Backend
+# configure environment (see below)
 npm run dev
+```
 
-Frontend:
+2) Frontend
 
-cd Frontend
-npm start
+```powershell
+cd Frontend/Vidora
+npm install
+npm run dev
+```
 
-Then visit 👉 URL...Loading
+Open `http://localhost:5175` (Vite default) to use the app. The backend is expected at `http://localhost:8000` by default.
 
-🚀 Future Enhancements
+## Configuration
 
-📅 Meeting scheduling & calendar integration
+Backend environment variables (examples):
 
-📁 Cloud recording & storage
+- `PORT` — API + signaling server port (default: 8000)
+- `MONGO_URI` — MongoDB connection string (if using DB)
+- `JWT_SECRET` — secret for auth tokens
 
-📲 PWA (mobile support)
+Update API base URLs in `Frontend/Vidora/src/contexts/AuthContext.jsx` and `Frontend/Vidora/src/pages/VideoMeet.jsx` if your backend runs at a different address.
 
-🧏‍♀️ AI-based noise suppression
+## Local Testing Tips
 
-🖼️ Preview
+- Use multiple browser tabs (or different browsers/incognito windows) with different usernames to simulate multiple participants.
+- Grant camera/microphone permissions when prompted.
+- If remote video tiles do not appear:
+	- Verify the backend (Socket.IO) server is running and reachable.
+	- Check browser console for socket connection logs and errors.
+	- Ensure the frontend uses the Socket.IO client (`socket.io-client`) rather than raw WebSocket.
 
-Loading...
+## Troubleshooting
 
-🧑‍💻 Author
+- `getUserMedia` errors: ensure the page has permission to use the camera/microphone.
+- Socket connection errors: confirm Socket.IO client and server versions are compatible and the server URL is correct.
+- If ICE candidates fail across networks, consider adding a TURN server for reliable NAT traversal.
 
-👩‍💻 Mansi More
-💼 MERN Stack Developer | Real-time Web App Enthusiast
-📧 moremansi1707@gmail.com
+## Developer Notes
 
-🌐 Portfolio
-• LinkedIn
+- Some code paths use legacy `addStream`/`onaddstream` APIs. You may prefer `addTrack` / `ontrack` for new work.
+- Files containing JSX should use `.jsx` extension to avoid esbuild/Vite parsing issues.
 
-🪪 License
+## Contributing
 
-This project is licensed under the MIT License — feel free to use and modify it.
+1. Fork the repository and create a feature branch.
+2. Implement and test your changes.
+3. Open a pull request with a clear description and testing steps.
 
-<p align="center"> <b>Vidora</b> — Where collaboration meets simplicity 💫 </p>
+## License
+
+This project does not include a license file by default. Add a `LICENSE` if you wish to make it open source.
+
+---
+
+If you'd like, I can also:
+
+- Add a `.env.example` for the backend
+- Provide Docker / docker-compose examples to run backend + frontend
+- Add short developer run scripts or a CONTRIBUTING.md
+
+Tell me which of these you'd like next.
