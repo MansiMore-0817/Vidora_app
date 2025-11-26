@@ -21,16 +21,16 @@ const Card = styled(MuiCard)(({ theme }) => ({
   alignSelf: 'center',
   width: '100%',
   padding: theme.spacing(4),
-  gap: theme.spacing(2),
-  boxShadow:
-    'hsla(220, 30%, 5%, 0.05) 0px 5px 15px 0px, hsla(220, 25%, 10%, 0.05) 0px 15px 35px -5px',
+  gap: theme.spacing(2.5),
+  borderRadius: 3,
+  background:
+    'radial-gradient(circle at top left, rgba(150, 15, 188, 0.32), rgba(6, 9, 30, 0.96))',
+  boxShadow: '0 24px 60px rgba(0, 0, 0, 0.9)',
+  border: '1px solid rgba(255, 255, 255, 0.14)',
+  color: '#f9fafb',
   [theme.breakpoints.up('sm')]: {
     width: '450px',
   },
-  ...theme.applyStyles('dark', {
-    boxShadow:
-      'hsla(220, 30%, 5%, 0.5) 0px 5px 15px 0px, hsla(220, 25%, 10%, 0.08) 0px 15px 35px -5px',
-  }),
 }));
 
 export default function SignUpCard() {
@@ -135,7 +135,11 @@ export default function SignUpCard() {
       <Typography
         component="h1"
         variant="h4"
-        sx={{ width: '100%', fontSize: 'clamp(2rem, 10vw, 2.15rem)' }}
+        sx={{
+          width: '100%',
+          fontSize: 'clamp(2rem, 10vw, 2.15rem)',
+          fontWeight: 700,
+        }}
       >
         Sign up
       </Typography>
@@ -146,7 +150,9 @@ export default function SignUpCard() {
         sx={{ display: 'flex', flexDirection: 'column', width: '100%', gap: 2 }}
       >
         <FormControl>
-          <FormLabel htmlFor="name">Full Name</FormLabel>
+          <FormLabel sx={{ color: 'rgba(226,232,240,0.9)' }} htmlFor="name">
+            Full Name
+          </FormLabel>
           <TextField
             error={nameError}
             helperText={nameErrorMessage}
@@ -160,11 +166,30 @@ export default function SignUpCard() {
             fullWidth
             variant="outlined"
             color={nameError ? 'error' : 'primary'}
+            sx={{
+              '& .MuiOutlinedInput-root': {
+                '& fieldset': {
+                  borderColor: '#960fbc',
+                },
+                '&:hover fieldset': {
+                  borderColor: '#7a0897',
+                },
+                '&.Mui-focused fieldset': {
+                  borderColor: '#960fbc',
+                },
+                backgroundColor: 'rgba(15,23,42,0.85)',
+              },
+              '& .MuiInputBase-input': {
+                color: '#f9fafb',
+              },
+            }}
           />
         </FormControl>
 
         <FormControl>
-          <FormLabel htmlFor="username">Username</FormLabel>
+          <FormLabel sx={{ color: 'rgba(226,232,240,0.9)' }} htmlFor="username">
+            Username
+          </FormLabel>
           <TextField
             error={usernameError}
             helperText={usernameErrorMessage}
@@ -177,11 +202,30 @@ export default function SignUpCard() {
             fullWidth
             variant="outlined"
             color={usernameError ? 'error' : 'primary'}
+            sx={{
+              '& .MuiOutlinedInput-root': {
+                '& fieldset': {
+                  borderColor: '#960fbc',
+                },
+                '&:hover fieldset': {
+                  borderColor: '#7a0897',
+                },
+                '&.Mui-focused fieldset': {
+                  borderColor: '#960fbc',
+                },
+                backgroundColor: 'rgba(15,23,42,0.85)',
+              },
+              '& .MuiInputBase-input': {
+                color: '#f9fafb',
+              },
+            }}
           />
         </FormControl>
 
         <FormControl>
-          <FormLabel htmlFor="password">Password</FormLabel>
+          <FormLabel sx={{ color: 'rgba(226,232,240,0.9)' }} htmlFor="password">
+            Password
+          </FormLabel>
           <TextField
             error={passwordError}
             helperText={passwordErrorMessage}
@@ -194,6 +238,23 @@ export default function SignUpCard() {
             fullWidth
             variant="outlined"
             color={passwordError ? 'error' : 'primary'}
+            sx={{
+              '& .MuiOutlinedInput-root': {
+                '& fieldset': {
+                  borderColor: '#960fbc',
+                },
+                '&:hover fieldset': {
+                  borderColor: '#7a0897',
+                },
+                '&.Mui-focused fieldset': {
+                  borderColor: '#960fbc',
+                },
+                backgroundColor: 'rgba(15,23,42,0.85)',
+              },
+              '& .MuiInputBase-input': {
+                color: '#f9fafb',
+              },
+            }}
             slotProps={{
               input: {
                 endAdornment: (
@@ -214,7 +275,9 @@ export default function SignUpCard() {
         </FormControl>
 
         <FormControl>
-          <FormLabel htmlFor="confirmPassword">Confirm Password</FormLabel>
+          <FormLabel sx={{ color: 'rgba(226,232,240,0.9)' }} htmlFor="confirmPassword">
+            Confirm Password
+          </FormLabel>
           <TextField
             error={confirmPasswordError}
             helperText={confirmPasswordErrorMessage}
@@ -227,6 +290,23 @@ export default function SignUpCard() {
             fullWidth
             variant="outlined"
             color={confirmPasswordError ? 'error' : 'primary'}
+            sx={{
+              '& .MuiOutlinedInput-root': {
+                '& fieldset': {
+                  borderColor: '#960fbc',
+                },
+                '&:hover fieldset': {
+                  borderColor: '#7a0897',
+                },
+                '&.Mui-focused fieldset': {
+                  borderColor: '#960fbc',
+                },
+                backgroundColor: 'rgba(15,23,42,0.85)',
+              },
+              '& .MuiInputBase-input': {
+                color: '#f9fafb',
+              },
+            }}
             slotProps={{
               input: {
                 endAdornment: (
@@ -246,7 +326,21 @@ export default function SignUpCard() {
           />
         </FormControl>
 
-        <Button type="submit" fullWidth variant="contained" onClick={validateInputs}>
+        <Button
+          type="submit"
+          fullWidth
+          variant="contained"
+          onClick={validateInputs}
+          sx={{
+            mt: 1,
+            backgroundColor: '#960fbc',
+            textTransform: 'none',
+            fontWeight: 600,
+            '&:hover': {
+              backgroundColor: '#7a0897',
+            },
+          }}
+        >
           Sign up
         </Button>
 
@@ -256,7 +350,7 @@ export default function SignUpCard() {
           </Typography>
         )}
 
-        <Typography sx={{ textAlign: 'center' }}>
+        <Typography sx={{ textAlign: 'center', color: 'rgba(226,232,240,0.9)' }}>
           Already have an account?{' '}
           <span>
             <Link

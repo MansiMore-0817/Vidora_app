@@ -1,4 +1,5 @@
 import React, { useState, useRef, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import TextField from "@mui/material/TextField";
 import Button from "@mui/material/Button";
 import Box from "@mui/material/Box";
@@ -24,6 +25,7 @@ const peerConfigConnections = {
 };
 
 function VideoMeetComp() {
+  const navigate = useNavigate();
   var socketRef = useRef();
   let socketIdRef = useRef();
 
@@ -67,6 +69,7 @@ function VideoMeetComp() {
   };
 
   const videoRef = useRef([]);
+  const peerNamesRef = useRef({});
 
   let [videos, setVideos] = useState([]);
 
@@ -384,6 +387,7 @@ function VideoMeetComp() {
               stream: event.stream,
               autoPlay: true,
               playsInline: true,
+              username: peerNamesRef.current[fromId] || "Guest",
             };
 
             setVideos((videos) => {
@@ -461,7 +465,10 @@ function VideoMeetComp() {
 
     socketRef.current.on("connect", () => {
       console.log("Socket connected with ID:", socketRef.current.id);
-      socketRef.current.emit("join-call", window.location.href);
+      socketRef.current.emit("join-call", {
+        path: window.location.href,
+        username,
+      });
 
       socketIdRef.current = socketRef.current.id;
 
@@ -474,7 +481,7 @@ function VideoMeetComp() {
         });
       });
 
-      socketRef.current.on("user-joined", (id, clients) => {
+      socketRef.current.on("user-joined", (id, clients, userNames) => {
         console.log("User joined:", id, "All clients:", clients);
         clients.forEach((socketListId) => {
           // Don't create a peer connection for our own socket here
@@ -488,6 +495,9 @@ function VideoMeetComp() {
             connections[socketListId] = new RTCPeerConnection(
               peerConfigConnections
             );
+            if (userNames && userNames[socketListId]) {
+              peerNamesRef.current[socketListId] = userNames[socketListId];
+            }
 
             connections[socketListId].onicecandidate = (event) => {
               if (event.candidate != null) {
@@ -505,7 +515,7 @@ function VideoMeetComp() {
                 (video) => video.socketId === socketListId
               );
 
-              if (videoExist) {
+                if (videoExist) {
                 setVideos((videos) => {
                   const updatedVideos = videos.map((video) => {
                     return video.socketId === socketListId
@@ -515,12 +525,13 @@ function VideoMeetComp() {
                   videoRef.current = updatedVideos;
                   return updatedVideos;
                 });
-              } else {
+                } else {
                 let newVideo = {
                   socketId: socketListId,
                   stream: event.stream,
                   autoPlay: true,
                   playsInline: true,
+                    username: peerNamesRef.current[socketListId] || "Guest",
                 };
 
                 setVideos((videos) => {
@@ -635,7 +646,7 @@ function VideoMeetComp() {
     if (socketRef.current) {
       socketRef.current.disconnect();
     }
-    window.location.href = "/";
+    navigate("/home");
   };
 
   let handleMessageChange = (e) => {
@@ -652,81 +663,76 @@ function VideoMeetComp() {
   return (
     <div className={styles.meetVideoContainer}>
       {askForUsername === true ? (
-        <div>
-          <h2 style={{ textAlign: "center", marginBottom: 12 }}>
-            Enter into lobby
-          </h2>
-          <Box
-            sx={{
-              display: "flex",
-              flexDirection: "column",
-              alignItems: "center",
-              gap: 1,
-            }}
-          >
-            <TextField
-              id="outlined-basic"
-              label="Username"
-              value={username}
-              onChange={(e) => setUsername(e.target.value)}
-              variant="outlined"
+        <div className={styles.lobbyContent}>
+          <div className={styles.lobbyCard}>
+            <div className={styles.lobbyTitle}>Get ready to join your call</div>
+            <div className={styles.lobbySubtitle}>
+              Check your name and preview before entering the meeting.
+            </div>
+            <Box
               sx={{
-                width: 320,
-                "& .MuiOutlinedInput-root": {
-                  "& fieldset": {
-                    borderColor: "#960fbc",
-                  },
-                  "&:hover fieldset": {
-                    borderColor: "#7a0897",
-                  },
-                  "&.Mui-focused fieldset": {
-                    borderColor: "#960fbc",
-                  },
-                  backgroundColor: "transparent",
-                },
-                "& .MuiInputLabel-root": {
-                  color: "#ffffff",
-                  "&.Mui-focused": {
-                    color: "#960fbc",
-                  },
-                },
-                "& .MuiInputBase-input": {
-                  color: "#ffffff",
-                },
-              }}
-            />
-
-            <Button
-              variant="contained"
-              onClick={connect}
-              sx={{
-                mt: 1,
-                backgroundColor: "#960fbc",
-                color: "#ffffff",
-                paddingX: 3,
-                paddingY: 1,
-                borderRadius: 2,
-                "&:hover": {
-                  backgroundColor: "#7a0897",
-                },
+                display: "flex",
+                flexDirection: "column",
+                alignItems: "stretch",
+                gap: 1.5,
               }}
             >
-              Connect
-            </Button>
-          </Box>
-          <div>
-            <video
-              ref={localVideoRef}
-              autoPlay
-              muted
-              style={{
-                width: "100%",
-                maxWidth: "500px",
-                height: "auto",
-                backgroundColor: "#000",
-                borderRadius: "8px",
-              }}
-            />
+              <TextField
+                id="outlined-basic"
+                label="Display name"
+                value={username}
+                onChange={(e) => setUsername(e.target.value)}
+                variant="outlined"
+                sx={{
+                  width: "100%",
+                  "& .MuiOutlinedInput-root": {
+                    "& fieldset": {
+                      borderColor: "#960fbc",
+                    },
+                    "&:hover fieldset": {
+                      borderColor: "#7a0897",
+                    },
+                    "&.Mui-focused fieldset": {
+                      borderColor: "#960fbc",
+                    },
+                    backgroundColor: "transparent",
+                  },
+                  "& .MuiInputLabel-root": {
+                    color: "#ffffff",
+                    "&.Mui-focused": {
+                    color: "#960fbc",
+                    },
+                  },
+                  "& .MuiInputBase-input": {
+                    color: "#ffffff",
+                  },
+                }}
+              />
+
+              <Button
+                variant="contained"
+                onClick={connect}
+                sx={{
+                  mt: 1,
+                backgroundColor: "#960fbc",
+                  color: "#ffffff",
+                  paddingX: 3,
+                  paddingY: 1,
+                  borderRadius: 2,
+                  textTransform: "none",
+                  fontWeight: 600,
+                  "&:hover": {
+                  backgroundColor: "#7a0897",
+                  },
+                }}
+              >
+                Join meeting
+              </Button>
+            </Box>
+          </div>
+
+          <div className={styles.lobbyPreview}>
+            <video ref={localVideoRef} autoPlay muted />
           </div>
         </div>
       ) : (
@@ -744,7 +750,7 @@ function VideoMeetComp() {
                   </div>
                   <IconButton
                     size="small"
-                    sx={{ color: "#c9c4ff" }}
+                    sx={{ color: "#960fbc" }}
                     onClick={() => setShowModal(false)}
                   >
                     ✕
@@ -797,10 +803,10 @@ function VideoMeetComp() {
                           borderColor: "rgba(201, 196, 255, 0.4)",
                         },
                         "&:hover fieldset": {
-                          borderColor: "#c9c4ff",
+                          borderColor: "#960fbc",
                         },
                         "&.Mui-focused fieldset": {
-                          borderColor: "#c9c4ff",
+                          borderColor: "#960fbc",
                         },
                         backgroundColor: "rgba(5, 8, 30, 0.8)",
                       },
@@ -817,14 +823,12 @@ function VideoMeetComp() {
                     variant="contained"
                     onClick={sendMessage}
                     sx={{
-                      background:
-                        "linear-gradient(135deg, #9b5dff, #ff4fb2)",
+                      backgroundColor: "#960fbc",
                       textTransform: "none",
                       boxShadow:
                         "0 8px 20px rgba(155, 93, 255, 0.45)",
                       "&:hover": {
-                        background:
-                          "linear-gradient(135deg, #8648f0, #ff3f9b)",
+                        backgroundColor: "#7a0897",
                         boxShadow:
                           "0 10px 26px rgba(155, 93, 255, 0.6)",
                       },
@@ -874,17 +878,22 @@ function VideoMeetComp() {
           </div>
 
           {/* Local video */}
-          <video
-            className={styles.meetUserVideo}
-            ref={localVideoRef}
-            autoPlay
-            muted
-          />
+          <div className={styles.localVideoWrapper}>
+            <video
+              className={styles.meetUserVideo}
+              ref={localVideoRef}
+              autoPlay
+              muted
+            />
+            <div className={styles.videoNameTag}>
+              {username || "You"}
+            </div>
+          </div>
 
           {/* Remote videos */}
           <div className={styles.conferenceView}>
             {videos.map((video) => (
-              <div key={video.socketId}>
+              <div key={video.socketId} className={styles.remoteVideoTile}>
                 <video
                   data-socket={video.socketId}
                   ref={(ref) => {
@@ -895,6 +904,9 @@ function VideoMeetComp() {
                   autoPlay
                   playsInline
                 />
+                <div className={styles.videoNameTag}>
+                  {video.username || "Guest"}
+                </div>
               </div>
             ))}
           </div>

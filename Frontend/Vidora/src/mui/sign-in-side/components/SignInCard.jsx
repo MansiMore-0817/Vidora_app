@@ -25,16 +25,16 @@ const Card = styled(MuiCard)(({ theme }) => ({
   alignSelf: 'center',
   width: '100%',
   padding: theme.spacing(4),
-  gap: theme.spacing(2),
-  boxShadow:
-    'hsla(220, 30%, 5%, 0.05) 0px 5px 15px 0px, hsla(220, 25%, 10%, 0.05) 0px 15px 35px -5px',
+  gap: theme.spacing(2.5),
+  borderRadius: 3,
+  background:
+    'radial-gradient(circle at top left, rgba(150, 15, 188, 0.32), rgba(6, 9, 30, 0.96))',
+  boxShadow: '0 24px 60px rgba(0, 0, 0, 0.9)',
+  border: '1px solid rgba(255, 255, 255, 0.14)',
+  color: '#f9fafb',
   [theme.breakpoints.up('sm')]: {
     width: '450px',
   },
-  ...theme.applyStyles('dark', {
-    boxShadow:
-      'hsla(220, 30%, 5%, 0.5) 0px 5px 15px 0px, hsla(220, 25%, 10%, 0.08) 0px 15px 35px -5px',
-  }),
 }));
 
 export default function SignInCard() {
@@ -118,7 +118,11 @@ export default function SignInCard() {
       <Typography
         component="h1"
         variant="h4"
-        sx={{ width: '100%', fontSize: 'clamp(2rem, 10vw, 2.15rem)' }}
+        sx={{
+          width: '100%',
+          fontSize: 'clamp(2rem, 10vw, 2.15rem)',
+          fontWeight: 700,
+        }}
       >
         Sign in
       </Typography>
@@ -129,7 +133,9 @@ export default function SignInCard() {
         sx={{ display: 'flex', flexDirection: 'column', width: '100%', gap: 2 }}
       >
         <FormControl>
-          <FormLabel htmlFor="username">Username</FormLabel>
+          <FormLabel sx={{ color: 'rgba(226,232,240,0.9)' }} htmlFor="username">
+            Username
+          </FormLabel>
           <TextField
             error={emailError}
             helperText={emailErrorMessage}
@@ -143,17 +149,36 @@ export default function SignInCard() {
             fullWidth
             variant="outlined"
             color={emailError ? 'error' : 'primary'}
+            sx={{
+              '& .MuiOutlinedInput-root': {
+                '& fieldset': {
+                  borderColor: '#960fbc',
+                },
+                '&:hover fieldset': {
+                  borderColor: '#7a0897',
+                },
+                '&.Mui-focused fieldset': {
+                  borderColor: '#960fbc',
+                },
+                backgroundColor: 'rgba(15,23,42,0.85)',
+              },
+              '& .MuiInputBase-input': {
+                color: '#f9fafb',
+              },
+            }}
           />
         </FormControl>
         <FormControl>
-          <Box sx={{ display: 'flex', justifyContent: 'space-between' }}>
-            <FormLabel htmlFor="password">Password</FormLabel>
+          <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+            <FormLabel sx={{ color: 'rgba(226,232,240,0.9)' }} htmlFor="password">
+              Password
+            </FormLabel>
             <Link
               component="button"
               type="button"
               onClick={handleClickOpen}
               variant="body2"
-              sx={{ alignSelf: 'baseline' }}
+              sx={{ alignSelf: 'baseline', color: '#cbd5f5' }}
             >
               Forgot your password?
             </Link>
@@ -171,6 +196,23 @@ export default function SignInCard() {
             fullWidth
             variant="outlined"
             color={passwordError ? 'error' : 'primary'}
+            sx={{
+              '& .MuiOutlinedInput-root': {
+                '& fieldset': {
+                  borderColor: '#960fbc',
+                },
+                '&:hover fieldset': {
+                  borderColor: '#7a0897',
+                },
+                '&.Mui-focused fieldset': {
+                  borderColor: '#960fbc',
+                },
+                backgroundColor: 'rgba(15,23,42,0.85)',
+              },
+              '& .MuiInputBase-input': {
+                color: '#f9fafb',
+              },
+            }}
             slotProps={{
               input: {
                 endAdornment: (
@@ -192,6 +234,7 @@ export default function SignInCard() {
         <FormControlLabel
           control={<Checkbox value="remember" color="primary" />}
           label="Remember me"
+          sx={{ color: 'rgba(226,232,240,0.9)' }}
         />
         {apiError && (
           <Typography sx={{ color: 'error.main', fontSize: '0.875rem', textAlign: 'center' }}>
@@ -199,10 +242,24 @@ export default function SignInCard() {
           </Typography>
         )}
         <ForgotPassword open={open} handleClose={handleClose} />
-        <Button type="submit" fullWidth variant="contained" onClick={validateInputs}>
+        <Button
+          type="submit"
+          fullWidth
+          variant="contained"
+          onClick={validateInputs}
+          sx={{
+            mt: 1,
+            backgroundColor: '#960fbc',
+            textTransform: 'none',
+            fontWeight: 600,
+            '&:hover': {
+              backgroundColor: '#7a0897',
+            },
+          }}
+        >
           Sign in
         </Button>
-        <Typography sx={{ textAlign: 'center' }}>
+        <Typography sx={{ textAlign: 'center', color: 'rgba(226,232,240,0.9)' }}>
           Don&apos;t have an account?{' '}
           <span>
             <Link
@@ -216,13 +273,22 @@ export default function SignInCard() {
           </span>
         </Typography>
       </Box>
-      <Divider>or</Divider>
+      <Divider sx={{ borderColor: 'rgba(148,163,184,0.4)' }}>or</Divider>
       <Box sx={{ display: 'flex', flexDirection: 'column', gap: 2 }}>
         <Button
           fullWidth
           variant="outlined"
           onClick={() => alert('Sign in with Google')}
           startIcon={<GoogleIcon />}
+          sx={{
+            borderColor: 'rgba(148,163,184,0.5)',
+            color: '#e5e7eb',
+            textTransform: 'none',
+            '&:hover': {
+              borderColor: '#960fbc',
+              backgroundColor: 'rgba(15,23,42,0.85)',
+            },
+          }}
         >
           Sign in with Google
         </Button>
@@ -231,6 +297,15 @@ export default function SignInCard() {
           variant="outlined"
           onClick={() => alert('Sign in with Facebook')}
           startIcon={<FacebookIcon />}
+          sx={{
+            borderColor: 'rgba(148,163,184,0.5)',
+            color: '#e5e7eb',
+            textTransform: 'none',
+            '&:hover': {
+              borderColor: '#960fbc',
+              backgroundColor: 'rgba(15,23,42,0.85)',
+            },
+          }}
         >
           Sign in with Facebook
         </Button>

@@ -20,7 +20,7 @@ function LandingPage() {
 
             <div className="landingMainContainer">
                 <div>
-                    <h1><span style={{color:"#960fbcff"}}>Connect</span> With Your <br/> Loved Ones</h1>
+                    <h1><span style={{color:"#960fbc"}}>Connect</span> With Your <br/> Loved Ones</h1>
 
                     <p>Cover a distance with Vidora</p>
                     <div role='button'>

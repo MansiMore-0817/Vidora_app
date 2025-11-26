@@ -6,13 +6,25 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background: radial-gradient(circle at top left, #3c1e7b 0%, #050716 55%, #02040a 100%);
+  background:
+    radial-gradient(circle at top left, rgba(150, 15, 188, 0.45) 0%, rgba(5, 7, 22, 0.95) 55%, rgba(2, 4, 10, 1) 100%),
+    url("/background.png");
+  background-size: cover;
+  background-position: center;
+}
+
+.localVideoWrapper {
+  position: absolute;
+  bottom: 9vh;
+  left: 3vw;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0;
+  position: absolute;
 }
 
 .meetUserVideo {
-  position: absolute;
-  bottom: 11vh;
-  left: 3vw;
   height: 18vh;
   width: auto;
   border-radius: 16px;
@@ -50,6 +62,14 @@
   max-width: 72vw;
 }
 
+.remoteVideoTile {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0;
+  position: relative;
+}
+
 .conferenceView video {
   width: 32vw;
   height: 32vh;
@@ -59,6 +79,21 @@
   background: #000;
   box-shadow: 0 18px 45px rgba(0, 0, 0, 0.7);
   border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.videoNameTag {
+  position: absolute;
+  left: 10px;
+  bottom: 8px;
+  padding: 2px 8px;
+  border-radius: 999px;
+  background: rgba(15, 23, 42, 0.82);
+  color: #e5e7eb;
+  font-size: 0.75rem;
+  max-width: 100%;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
 }
 
 .chatRoom {
@@ -97,7 +132,7 @@
   font-weight: 600;
   letter-spacing: 0.04em;
   text-transform: uppercase;
-  color: #c9c4ff;
+  color: #960fbc;
 }
 
 .chatSubtitle {
@@ -136,7 +171,7 @@
 }
 
 .bubbleOwn {
-  background: linear-gradient(135deg, #9b5dff, #ff4fb2);
+  background-color: #960fbc;
   color: #ffffff;
   border-bottom-right-radius: 4px;
 }
@@ -175,4 +210,53 @@
 .chattingArea input,
 .chattingArea .MuiInputBase-root {
   flex: 1;
+}
+
+/* Lobby (pre-join) */
+.lobbyContent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+  color: #ffffff;
+}
+
+.lobbyCard {
+  background: radial-gradient(circle at top left, rgba(150, 15, 188, 0.32), rgba(6, 9, 30, 0.96));
+  padding: 24px 28px 20px;
+  border-radius: 20px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.85);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(22px);
+  min-width: 320px;
+  max-width: 420px;
+}
+
+.lobbyTitle {
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+
+.lobbySubtitle {
+  font-size: 0.9rem;
+  color: rgba(226, 232, 240, 0.85);
+  margin-bottom: 14px;
+}
+
+.lobbyPreview {
+  max-width: 480px;
+  width: 100%;
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 22px 55px rgba(0, 0, 0, 0.85);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+}
+
+.lobbyPreview video {
+  width: 100%;
+  height: auto;
+  display: block;
+  background: #000;
 }

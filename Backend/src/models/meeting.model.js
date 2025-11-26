@@ -1,19 +1,20 @@
 import mongoose, { Schema } from "mongoose";
 
 const meetingSchema = new Schema({
-    userId: {
-        type: String
+    user_id: {
+        type: String,
+        required: true,
     },
     meetingCode: {
         type: String,
-        required: true
+        required: true,
     },
     date: {
         type: Date,
         default: Date.now,
-        required: true
-    }
-})
+        required: true,
+    },
+});
 
 
 const Meeting = mongoose.model("Meeting", meetingSchema);

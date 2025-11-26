@@ -1,7 +1,7 @@
 .landingPageContainer{
     width: 100vw;
     height: 100vh;
-    background: url("./public/background.png");
+    background: url("/background.png");
     background-repeat: no-repeat;
     background-size: cover;
     color: white;
@@ -41,11 +41,11 @@
 
 .landingPageContainer nav .navLink:hover{
     opacity: 0.8;
-    color: #960fbcff;
+    color: #960fbc;
 }
 
 .landingPageContainer nav .navButton{
-    background: #960fbcff;
+    background: #960fbc;
     color: white;
     border: none;
     padding: 0.75rem 1.5rem;
@@ -96,4 +96,176 @@
     height: 70vh;
     width: auto;
 
+}
+
+/* =======================
+   Home page (authenticated)
+   ======================= */
+
+.homePage {
+    min-height: 100vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    background: url("/background.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: #ffffff;
+}
+
+.navBar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 3.5rem;
+    border-bottom: 1px solid rgba(148, 163, 184, 0.4);
+    backdrop-filter: blur(12px);
+    background: linear-gradient(to bottom, rgba(15, 23, 42, 0.96), rgba(15, 23, 42, 0.85));
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+.navBrand h3 {
+    font-size: 1.4rem;
+    font-weight: 700;
+    letter-spacing: 0.03em;
+}
+
+.navActions {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    color: #cbd5f5;
+}
+
+.navActions p {
+    margin: 0;
+    font-size: 0.9rem;
+}
+
+.meetContainer {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 3.25rem 3.5rem 3.5rem;
+    gap: 3rem;
+}
+
+.leftPanel,
+.rightPanel {
+    flex: 1;
+    display: flex;
+    align-items: center;
+}
+
+.heroContent {
+    max-width: 520px;
+}
+
+.heroContent h2 {
+    font-size: 2.5rem;
+    line-height: 1.2;
+    margin: 0.5rem 0 0.75rem;
+}
+
+.heroContent .eyebrow {
+    text-transform: uppercase;
+    letter-spacing: 0.16em;
+    font-size: 0.78rem;
+    font-weight: 600;
+    color: #7c3aed;
+    margin: 0;
+}
+
+.heroContent .subtitle {
+    margin: 0 0 1.75rem;
+    color: #cbd5f5;
+    font-size: 0.98rem;
+}
+
+.joinForm {
+    display: flex;
+    gap: 0.75rem;
+    align-items: center;
+}
+
+.joinForm .MuiTextField-root {
+    max-width: 320px;
+}
+
+.heroImageWrapper {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.heroImageWrapper img {
+    max-width: 420px;
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    filter: drop-shadow(0 25px 45px rgba(0, 0, 0, 0.85));
+    border-radius: 1.5rem;
+}
+
+/* History page */
+.historyPage {
+    min-height: 100vh;
+    width: 100vw;
+    padding: 1.5rem 3.5rem 3rem;
+    background: url("/background.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: #ffffff;
+}
+
+.historyPage header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 1.5rem;
+}
+
+.historyList {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1rem;
+}
+
+.historyCard {
+    background: rgba(15, 23, 42, 0.85);
+    border-radius: 0.75rem;
+    border: 1px solid rgba(148, 163, 184, 0.3);
+}
+
+@media (max-width: 960px) {
+    .navBar {
+        padding-inline: 1.5rem;
+    }
+
+    .meetContainer {
+        flex-direction: column;
+        padding: 2rem 1.5rem 2.5rem;
+    }
+
+    .heroContent {
+        text-align: left;
+    }
+
+    .joinForm {
+        width: 100%;
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .joinForm .MuiTextField-root {
+        max-width: 100%;
+    }
+
+    .rightPanel {
+        justify-content: center;
+    }
 }
