@@ -136,6 +136,58 @@ Update API base URLs in `Frontend/Vidora/src/contexts/AuthContext.jsx` and `Fron
 - Socket connection errors: confirm Socket.IO client and server versions are compatible and the server URL is correct.
 - If ICE candidates fail across networks, consider adding a TURN server for reliable NAT traversal.
 
+## About Me / What This Project Demonstrates
+
+Vidora showcases my ability to build real-time, full-stack applications with clean architecture and modern frontend design. Through this project, I worked with WebRTC, Socket.IO, React, and Node.js to create a functional video-conferencing experience similar to real-world platforms.
+
+This project demonstrates my skills in:
+
+Real-time communication: WebRTC media handling, signaling, ICE/SDP flow, multi-peer connections.
+
+Full-stack development: React + MUI on the frontend, Node.js + Express + Socket.IO on the backend.
+
+System architecture thinking: stateless signaling, P2P media routing, STUN/TURN, room state management.
+
+Problem-solving: debugging browser differences, managing media tracks, preventing leak issues, handling dynamic UI changes.
+
+Product-focused UI: responsive layouts, screen sharing workflows, intuitive controls for camera/mic.
+
+Overall, Vidora reflects my interest in real-time systems, modern web technologies, and building projects that feel practical, polished, and production-ready.
+
+
+## Tech Decisions & Tradeoffs
+
+# WebRTC Mesh vs SFU
+
+Chose peer-to-peer mesh for simplicity, low latency, and learning fundamentals.
+Tradeoff: not ideal for large meetings; SFU would scale better.
+
+# Socket.IO for Signaling
+
+Used Socket.IO for stable rooms and auto-reconnection.
+Tradeoff: slightly more overhead than raw WebSockets.
+
+# React + MUI
+
+Selected React for component structure and MUI for fast, polished UI.
+Tradeoff: heavier than custom styling.
+
+$ P2P Media Routing
+
+Kept audio/video P2P to reduce server load.
+Tradeoff: requires TURN for strict networks; limits scalability.
+
+# Stateless Signaling Server
+
+Server only relays messages, no media.
+Tradeoff: no persistent chat or analytics.
+
+# Public STUN Server
+
+Used Google STUN for convenience.
+Tradeoff: not reliable for production; TURN still needed.
+
+
 ## Developer Notes
 
 - Some code paths use legacy `addStream`/`onaddstream` APIs. You may prefer `addTrack` / `ontrack` for new work.
@@ -147,10 +199,7 @@ Update API base URLs in `Frontend/Vidora/src/contexts/AuthContext.jsx` and `Fron
 2. Implement and test your changes.
 3. Open a pull request with a clear description and testing steps.
 
-## License
+<p align="center">Built by <b>Mansi More</b> • moremansi1707@gmail.com</p>
 
-This project does not include a license file by default. Add a `LICENSE` if you wish to make it open source.
-
----
 
 
