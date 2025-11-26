@@ -42,8 +42,6 @@ Signaling handled by Socket.io
 REST APIs for users & meeting management
 # Vidora
 
-Professional, minimal README for the Vidora video conferencing project.
-
 Vidora is a browser-based video conferencing app using WebRTC for peer-to-peer media and Socket.IO for signaling. The project includes a React frontend (Vite) and a Node/Express backend that handles authentication and signaling.
 
 ## Key Features
@@ -126,10 +124,4 @@ This project does not include a license file by default. Add a `LICENSE` if you 
 
 ---
 
-If you'd like, I can also:
 
-- Add a `.env.example` for the backend
-- Provide Docker / docker-compose examples to run backend + frontend
-- Add short developer run scripts or a CONTRIBUTING.md
-
-Tell me which of these you'd like next.
