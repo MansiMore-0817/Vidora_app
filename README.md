@@ -40,6 +40,35 @@ Peer-to-peer connections via WebRTC
 Signaling handled by Socket.io
 
 REST APIs for users & meeting management
+
+├── Backend/
+│   ├── package.json
+│   ├── src/
+│   │   ├── app.js                # Express + Socket.IO setup
+│   │   ├── controllers/
+│   │   │   └── socketManager.js  # signaling, join/leave management
+│   │   ├── routes/               # REST endpoints
+│   │   └── models/               # optional MongoDB models
+│   └── .env.example
+│
+├── Frontend/
+│   └── Vidora/
+│       ├── package.json
+│       ├── src/
+│       │   ├── App.jsx
+│       │   ├── main.jsx
+│       │   ├── pages/
+│       │   │   ├── VideoMeet.jsx
+│       │   │   ├── landing.jsx
+│       │   │   └── authentication.jsx
+│       │   ├── contexts/
+│       │   │   └── AuthContext.jsx
+│       │   └── mui/                     # shared MUI components
+│       └── public/
+│
+└── README.md
+
+
 # Vidora
 
 Vidora is a browser-based video conferencing app using WebRTC for peer-to-peer media and Socket.IO for signaling. The project includes a React frontend (Vite) and a Node/Express backend that handles authentication and signaling.
