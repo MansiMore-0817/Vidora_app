@@ -15,8 +15,8 @@ export const connectToSocket = (server) => {
   });
 
   io.on("connection", (socket) => {
-    console.log("SOMETHING CONNECTED");
-    io.on("join-call", (path) => {
+    console.log("SOMETHING CONNECTED", socket.id);
+    socket.on("join-call", (path) => {
       if (connections[path] === undefined) {
         connections[path] = [];
       }
