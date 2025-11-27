@@ -60,7 +60,6 @@ It allows users to host or join meetings, chat live, and share screens — all f
 <details>
 <summary>
 <p align="center">
-  <h1>✨📸 <u>DEMO SCREENSHOTS</u> 📸✨</h1>
 	<p> > Visual walkthrough </p>
 	
 ### Landing Page
@@ -131,7 +130,7 @@ It allows users to host or join meetings, chat live, and share screens — all f
 - 🔐 **JWT Authentication** for secure access
 
 
-Architecture:
+## Architecture:
 
 Peer-to-peer connections via WebRTC
 
