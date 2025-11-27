@@ -25,15 +25,14 @@
 
 
 
-## Overview
 
-🌐 Overview
+
+## 🌐 Overview
 
 Vidora is a full-stack video conferencing platform built using MongoDB, Express, React, and Node.js, with WebRTC for peer-to-peer streaming and Socket.io for real-time communication.
 It allows users to host or join meetings, chat live, and share screens — all from the browser.
 
-## Features
-✨ Features
+## ✨ Features
 
 🎥 Multi-participant video calls — responsive grid layout that adapts to 1→N participants for smooth group meetings.
 
