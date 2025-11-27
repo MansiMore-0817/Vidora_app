@@ -60,22 +60,8 @@ It allows users to host or join meetings, chat live, and share screens — all f
 <summary>
 <p align="center">
   <h1>✨📸 <u>DEMO SCREENSHOTS</u> 📸✨</h1>
+	<p> > Visual walkthrough </p>
 	
-  <br>
-  <h2><ins><em>👉   Click to expand visuals of the application</em></ins></h2>
-</p>
-
-
-
-
-
-</summary>
-
-<br>
-
-
-
-> Visual walkthrough
 ### Landing Page
 ![Landing Page](/Frontend/Vidora/Project_Screenshots/landing.jpg)
 
@@ -83,6 +69,16 @@ It allows users to host or join meetings, chat live, and share screens — all f
 | Sign In | Sign Up |
 |--------:|:-------|
 | ![Sign In](/Frontend/Vidora/Project_Screenshots/signin.jpg) | ![Sign Up](/Frontend/Vidora/Project_Screenshots/signup.jpg) |
+  <br><br>
+  
+  <h1><ins><em>👉   Click to see more visuals of this application... </em></ins></h1>
+</p>
+
+
+</summary>
+
+<br>
+
 
 ### Home / Dashboard
 ![Home Page](/Frontend/Vidora/Project_Screenshots/home.jpg)
@@ -114,7 +110,8 @@ It allows users to host or join meetings, chat live, and share screens — all f
 
 </details>
 
-
+<br>
+<br>
 
 ## 🧠 Tech Stack
 
