@@ -4,6 +4,21 @@
 
 <p align="center"> <img src="https://img.shields.io/badge/MERN-Stack-4DB33D?style=for-the-badge&logo=mongodb&logoColor=white" /> <img src="https://img.shields.io/badge/WebRTC-Enabled-blue?style=for-the-badge&logo=webrtc&logoColor=white" /> <img src="https://img.shields.io/badge/Socket.io-Real--time-black?style=for-the-badge&logo=socket.io&logoColor=white" /> <img src="https://img.shields.io/badge/React-Dynamic-61DAFB?style=for-the-badge&logo=react&logoColor=black" /> <img src="https://img.shields.io/badge/Node.js-Fast-339933?style=for-the-badge&logo=node.js&logoColor=white" /> </p>
 
+
+## 📄 Table of Contents
+
+- [Overview](#overview)  
+- [Features](#features)  
+- [Demo Screenshots](#demo-screenshots)  
+- [Tech Stack](#tech-stack)  
+- [Architecture](#architecture)  
+- [Installation (Developer)](#installation-developer)  
+- [Troubleshooting](#troubleshooting)  
+- [What This Project Demonstrates](#what-this-project-demonstrates)  
+- [Tech Decisions & Tradeoffs](#tech-decisions--tradeoffs)  
+- [Contact](#contact)  
+
+
 🌐 Overview
 
 Vidora is a full-stack video conferencing platform built using MongoDB, Express, React, and Node.js, with WebRTC for peer-to-peer streaming and Socket.io for real-time communication.
@@ -34,6 +49,8 @@ It allows users to host or join meetings, chat live, and share screens — all f
 - 🗂️ History DB query: <200ms (local MongoDB estimate; verify with console timing).
 
 
+<details>
+<summary>📸 Demo Screenshots</summary>
 # 📸 Demo Screenshots
 
 > Visual walkthrough
@@ -73,7 +90,7 @@ It allows users to host or join meetings, chat live, and share screens — all f
 
 ![History List](/Frontend/Vidora/Project_Screenshots/history_list.jpg)
 
-
+</details>
 ---
 
 
@@ -118,7 +135,8 @@ REST APIs for users & meeting management
 
 ```bash
 # 1. Clone
-git clone https://github.com/<your-username>/<repo>.git
+ git clone https://github.com/MansiMore-0817/Vidora_app.git
+
 cd <repo>
 
 # 2. Backend
