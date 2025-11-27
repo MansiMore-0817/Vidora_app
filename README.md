@@ -25,6 +25,16 @@ It allows users to host or join meetings, chat live, and share screens — all f
 
 ⚡ Lightweight & Scalable — Built for performance
 
+
+
+# 📸 Demo Screenshots
+
+> Visual walkthrough
+### Landing Page
+![Landing Page](./screenshots/landing.jpg)
+
+
+
 🧠 Tech Stack
 
 Frontend:
