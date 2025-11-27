@@ -7,16 +7,17 @@
 
 ## 📄 Table of Contents
 
-- [Overview](#overview)  
-- [Features](#features)  
-- [Demo Screenshots](#demo-screenshots)  
-- [Tech Stack](#tech-stack)  
-- [Architecture](#architecture)  
-- [Installation (Developer)](#installation-developer)  
-- [Troubleshooting](#troubleshooting)  
-- [What This Project Demonstrates](#what-this-project-demonstrates)  
-- [Tech Decisions & Tradeoffs](#tech-decisions--tradeoffs)  
-- [Contact](#contact)  
+- [Overview](#-overview)
+- [Features](#-features)
+- [Demo Screenshots](#-demo-screenshots)
+- [Tech Stack](#-tech-stack)
+- [Architecture](#-architecture)
+- [Installation (Developer)](#-installation-developer)
+- [Troubleshooting](#-troubleshooting)
+- [What This Project Demonstrates](#-what-this-project-demonstrates)
+- [Tech Decisions & Tradeoffs](#-tech-decisions--tradeoffs)
+- [Contact](#-contact)
+
 
 
 🌐 Overview
