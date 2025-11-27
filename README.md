@@ -31,7 +31,7 @@ It allows users to host or join meetings, chat live, and share screens — all f
 
 > Visual walkthrough
 ### Landing Page
-![Landing Page](/Frontend/Vidora/Project_Screenshots)
+![Landing Page](/Frontend/Vidora/Project_Screenshots/landing.jpg)
 
 
 
