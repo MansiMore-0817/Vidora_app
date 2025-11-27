@@ -41,10 +41,6 @@ It allows users to host or join meetings, chat live, and share screens — all f
 ### Home / Dashboard
 ![Home Page](/Frontend/Vidora/Project_Screenshots/home.jpg)
 
-### Meeting History (single & list)
-
-![History List](/Frontend/Vidora/Project_Screenshots/history_list.jpg)
-
 ### Pre-Join (camera preview)
 ![Pre Join](/Frontend/Vidora/Project_Screenshots/prejoin.jpg)
 
@@ -54,14 +50,22 @@ It allows users to host or join meetings, chat live, and share screens — all f
 | ![Camera permit](/Frontend/Vidora/Project_Screenshots/cam_mic_permissions.jpg) | ![Mic permit](/Frontend/Vidora/Project_Screenshots/mic_permission.jpg) |
 
 
-### Group Call (responsive grid)
-![Group Call Grid](/Frontend/Vidora/Project_Screenshots/group_grid.jpg)
+### In-call Chat & Screen Share side-by-side
+![Chat and Share](/Frontend/Vidora/Project_Screenshots/chat_and_share.jpg)
+
 
 ### Screen Sharing
 ![Screen Share](/Frontend/Vidora/Project_Screenshots/screenshare.jpg)
 
-### In-call Chat & Screen Share side-by-side
-![Chat and Share](/Frontend/Vidora/Project_Screenshots/chat_and_share.jpg)
+
+### Group Call (responsive grid)
+![Group Call Grid](/Frontend/Vidora/Project_Screenshots/group_grid.jpg)
+
+
+### Meeting History (single & list)
+
+![History List](/Frontend/Vidora/Project_Screenshots/history_list.jpg)
+
 
 ---
 
