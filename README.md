@@ -62,7 +62,7 @@ It allows users to host or join meetings, chat live, and share screens — all f
   <h1>✨📸 <u>DEMO SCREENSHOTS</u> 📸✨</h1>
 	
   <br>
-  <em>Click to expand visuals of the application</em>
+  <h2><ins><em>👉   Click to expand visuals of the application</em></ins></h2>
 </p>
 
 
@@ -113,7 +113,7 @@ It allows users to host or join meetings, chat live, and share screens — all f
 ![History List](/Frontend/Vidora/Project_Screenshots/history_list.jpg)
 
 </details>
----
+
 
 
 ## 🧠 Tech Stack
