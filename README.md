@@ -50,8 +50,18 @@ It allows users to host or join meetings, chat live, and share screens — all f
 
 
 <details>
-<summary>📸 Demo Screenshots</summary>
-# 📸 Demo Screenshots
+<summary>
+
+<p align="center">
+  <strong style="font-size: 28px;">📸 Demo Screenshots</strong><br>
+  <em>Click to expand visuals of the application</em>
+</p>
+
+</summary>
+
+<br>
+
+
 
 > Visual walkthrough
 ### Landing Page
