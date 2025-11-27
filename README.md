@@ -236,7 +236,7 @@ Used Google STUN for convenience.
 Tradeoff: not reliable for production; TURN still needed.
 ----------------------------------------------
 
-🧪 How to test locally (quick)
+## 🧪 How to test locally (quick)
 
 Start backend, then frontend.
 
