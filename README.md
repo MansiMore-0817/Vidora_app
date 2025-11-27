@@ -47,7 +47,7 @@ It allows users to host or join meetings, chat live, and share screens — all f
 🔐 Authentication & sessions — signup / signin flow with session handling to protect user access.
 
 
-### Performance and reliability metrics
+## Performance and reliability metrics
 
 - ⚡ UI load time (local dev): DOMContentLoaded ≈ 468 ms, Full load ≈ 471 ms (Chrome DevTools).  
 - 👥 Peer tests: 4–8 participants in local P2P tests (estimate — run local multi-tab/device tests to confirm).  
@@ -60,7 +60,7 @@ It allows users to host or join meetings, chat live, and share screens — all f
 <details>
 <summary>
 <p align="center">
-	<p> > Visual walkthrough </p>
+	<p>  Visual walkthrough </p>
 	
 ### Landing Page
 ![Landing Page](/Frontend/Vidora/Project_Screenshots/landing.jpg)
