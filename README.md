@@ -10,13 +10,19 @@
 - [Overview](#-overview)
 - [Features](#-features)
 - [Demo Screenshots](#-demo-screenshots)
+- [Performance and Reliability Metrics](#performance-and-reliability-metrics)
 - [Tech Stack](#-tech-stack)
-- [Architecture](#-architecture)
-- [Installation (Developer)](#-installation-developer)
-- [Troubleshooting](#-troubleshooting)
-- [What This Project Demonstrates](#-what-this-project-demonstrates)
-- [Tech Decisions & Tradeoffs](#-tech-decisions--tradeoffs)
-- [Contact](#-contact)
+- [Architecture](#architecture)
+- [Project Structure](#project-structure)
+- [Quick Start (development)](#quick-start-development)
+- [Troubleshooting](#troubleshooting)
+- [What This Project Demonstrates](#about-me--what-this-project-demonstrates)
+- [Tech Decisions & Tradeoffs](#tech-decisions--tradeoffs)
+- [How to test locally (quick)](#-how-to-test-locally-quick)
+- [Developer Notes](#developer-notes)
+- [Contributing](#contributing)
+- [Contact](#-connect-with-me)
+
 
 
 
@@ -54,9 +60,10 @@ It allows users to host or join meetings, chat live, and share screens — all f
 <summary>
 
 <p align="center">
-  <strong style="font-size: 70px;">📸 Demo Screenshots</strong><br>
+  <h1><strong>📸 DEMO SCREENSHOTS</strong></h1>
   <em>Click to expand visuals of the application</em>
 </p>
+
 
 </summary>
 
