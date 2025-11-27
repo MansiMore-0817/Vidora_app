@@ -11,19 +11,17 @@ It allows users to host or join meetings, chat live, and share screens — all f
 
 ✨ Features
 
-✅ Peer-to-Peer Video Calls — Real-time connections using WebRTC
+🎥 Multi-participant video calls — responsive grid layout that adapts to 1→N participants for smooth group meetings.
 
-💬 In-Meeting Chat — Instant messaging powered by Socket.io
+🔍 Camera preview / Pre-join screen — preview and set display name before entering a call.
 
-🪄 Create & Join Rooms — Unique room IDs for each meeting
+🖥️ Screen sharing — share any tab/window using getDisplayMedia() for presentations and demos.
 
-🔐 Authentication — JWT-secured login & registration
+💬 In-call real-time chat — instant messaging inside the room, keeps conversation synced for all participants.
 
-🖥️ Screen Sharing — Share your screen with participants
+🕒 Meeting history — persistent records of joined rooms (code, host, timestamp) for easy audit and recall.
 
-🌙 Dark Modern UI — Responsive and intuitive interface
-
-⚡ Lightweight & Scalable — Built for performance
+🔐 Authentication & sessions — signup / signin flow with session handling to protect user access.
 
 
 
@@ -86,32 +84,7 @@ Signaling handled by Socket.io
 
 REST APIs for users & meeting management
 
-├── Backend/
-│   ├── package.json
-│   ├── src/
-│   │   ├── app.js                # Express + Socket.IO setup
-│   │   ├── controllers/
-│   │   │   └── socketManager.js  # signaling, join/leave management
-│   │   ├── routes/               # REST endpoints
-│   │   └── models/               # optional MongoDB models
-│   └── .env.example
-│
-├── Frontend/
-│   └── Vidora/
-│       ├── package.json
-│       ├── src/
-│       │   ├── App.jsx
-│       │   ├── main.jsx
-│       │   ├── pages/
-│       │   │   ├── VideoMeet.jsx
-│       │   │   ├── landing.jsx
-│       │   │   └── authentication.jsx
-│       │   ├── contexts/
-│       │   │   └── AuthContext.jsx
-│       │   └── mui/                     # shared MUI components
-│       └── public/
-│
-└── README.md
+![Project Structure](/Frontend/Vidora/Project_Screenshots/Setup.jpg)
 
 
 # Vidora
@@ -132,44 +105,30 @@ Vidora is a browser-based video conferencing app using WebRTC for peer-to-peer m
 
 ## Quick Start (development)
 
-Prerequisites:
-- Node.js (16+)
-- npm or yarn
-- (Optional) MongoDB for persistent user storage
+# 🔧 Installation (Developer)
 
-1) Backend
+> Tested on Node 18+, npm 9+, MongoDB local.
 
-```powershell
-cd Backend
+```bash
+# 1. Clone
+git clone https://github.com/<your-username>/<repo>.git
+cd <repo>
+
+# 2. Backend
+cd backend
+cp .env.example .env
+# edit .env (MONGO_URI, JWT_SECRET, PORT)
 npm install
-# configure environment (see below)
-npm run dev
+npm run dev         # or `npm start` depending on your scripts
+
+# 3. Frontend
+cd ../frontend
+npm install
+# put screenshots into ./screenshots (see mapping at project root)
+npm run start       # opens http://localhost:5173 (or your configured port)
 ```
 
-2) Frontend
 
-```powershell
-cd Frontend/Vidora
-npm install
-npm run dev
-```
-
-Open `http://localhost:5175` (Vite default) to use the app. The backend is expected at `http://localhost:8000` by default.
-
-## Configuration
-
-Backend environment variables (examples):
-
-- `PORT` — API + signaling server port (default: 8000)
-- `MONGO_URI` — MongoDB connection string (if using DB)
-- `JWT_SECRET` — secret for auth tokens
-
-Update API base URLs in `Frontend/Vidora/src/contexts/AuthContext.jsx` and `Frontend/Vidora/src/pages/VideoMeet.jsx` if your backend runs at a different address.
-
-## Local Testing Tips
-
-- Use multiple browser tabs (or different browsers/incognito windows) with different usernames to simulate multiple participants.
-- Grant camera/microphone permissions when prompted.
 - If remote video tiles do not appear:
 	- Verify the backend (Socket.IO) server is running and reachable.
 	- Check browser console for socket connection logs and errors.
@@ -231,7 +190,21 @@ Tradeoff: no persistent chat or analytics.
 
 Used Google STUN for convenience.
 Tradeoff: not reliable for production; TURN still needed.
+----------------------------------------------
 
+🧪 How to test locally (quick)
+
+Start backend, then frontend.
+
+Open two separate browser windows (or different devices on the same network) and join the same room code — confirm you see each other's video.
+
+Test screen share (Share Chrome Tab / Window) and watch for the browser sharing popup.
+
+Use the chat box to exchange messages in the room.
+
+Check History page — entries should appear when users join.
+
+---------------------------------------------------------------------------------
 
 ## Developer Notes
 
