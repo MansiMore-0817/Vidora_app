@@ -48,6 +48,12 @@ It allows users to host or join meetings, chat live, and share screens — all f
 ### Pre-Join (camera preview)
 ![Pre Join](/Frontend/Vidora/Project_Screenshots/prejoin.jpg)
 
+### Allow Cam/Mic (Camera permission / Mic permission)
+| Camera Access | Mic Access |
+|--------:|:-------|
+| ![Camera permit](/Frontend/Vidora/Project_Screenshots/cam_mic_permissions.jpg) | ![Mic permit](/Frontend/Vidora/Project_Screenshots/mic_permission.jpg) |
+
+
 ### Group Call (responsive grid)
 ![Group Call Grid](/Frontend/Vidora/Project_Screenshots/group_grid.jpg)
 
