@@ -53,7 +53,7 @@ It allows users to host or join meetings, chat live, and share screens — all f
 <summary>
 
 <p align="center">
-  <strong style="font-size: 40px;">📸 Demo Screenshots</strong><br>
+  <strong style="font-size: 70px;">📸 Demo Screenshots</strong><br>
   <em>Click to expand visuals of the application</em>
 </p>
 
