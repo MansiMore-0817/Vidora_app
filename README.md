@@ -24,6 +24,15 @@ It allows users to host or join meetings, chat live, and share screens — all f
 🔐 Authentication & sessions — signup / signin flow with session handling to protect user access.
 
 
+### Performance and reliability metrics
+
+- ⚡ UI load time (local dev): DOMContentLoaded ≈ 468 ms, Full load ≈ 471 ms (Chrome DevTools).  
+- 👥 Peer tests: 4–8 participants in local P2P tests (estimate — run local multi-tab/device tests to confirm).  
+- 📡 Screen share delay: ~600ms (local estimate; measure with timestamp overlay for exact value).  
+- 💬 Chat median RTT: 40–80ms (LAN estimate; verify via socket ping/pong).  
+- 🔐 Auth response time: ~150ms (local estimate; verify via `curl`).  
+- 🗂️ History DB query: <200ms (local MongoDB estimate; verify with console timing).
+
 
 # 📸 Demo Screenshots
 
@@ -68,13 +77,22 @@ It allows users to host or join meetings, chat live, and share screens — all f
 ---
 
 
-🧠 Tech Stack
+## 🧠 Tech Stack
 
-Frontend:
-React.js • Tailwind CSS • Socket.io Client • WebRTC
+### 🌐 Frontend
+- ⚛️ **React.js** (Hooks-based architecture)
+- 🎨 **Material UI (MUI)** for component styling
+- 🖼️ **Material UI Icons** for modern iconography
+- 🎭 **Tailwind CSS** for utility-first custom UI
+- 🔌 **Socket.IO Client** for real-time communication
+- 📹 **WebRTC** for peer-to-peer video, audio & screen sharing
 
-Backend:
-Node.js • Express.js • MongoDB (Mongoose) • Socket.io • JWT
+### 🛠️ Backend
+- 🟩 **Node.js** + **Express.js**
+- 📡 **Socket.IO** for WebRTC signaling & live events
+- 🍃 **MongoDB** + **Mongoose** for data storage
+- 🔐 **JWT Authentication** for secure access
+
 
 Architecture:
 
@@ -86,17 +104,6 @@ REST APIs for users & meeting management
 
 ![Project Structure](/Frontend/Vidora/Project_Screenshots/Setup.jpg)
 
-
-# Vidora
-
-Vidora is a browser-based video conferencing app using WebRTC for peer-to-peer media and Socket.IO for signaling. The project includes a React frontend (Vite) and a Node/Express backend that handles authentication and signaling.
-
-## Key Features
-
-- Sign in / Sign up (basic auth flows)
-- Real-time signaling with Socket.IO
-- Peer-to-peer video (WebRTC) with a responsive multi-tile grid
-- In-meeting chat and optional screen sharing
 
 ## Repo Layout
 
@@ -216,6 +223,11 @@ Check History page — entries should appear when users join.
 1. Fork the repository and create a feature branch.
 2. Implement and test your changes.
 3. Open a pull request with a clear description and testing steps.
+
+
+## 📬 Connect With Me
+
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-blue?style=for-the-badge&logo=linkedin)](https://www.linkedin.com/in/mansimore0817)
 
 <p align="center">Built by <b>Mansi More</b> • moremansi1707@gmail.com</p>
 
