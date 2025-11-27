@@ -33,6 +33,31 @@ It allows users to host or join meetings, chat live, and share screens — all f
 ### Landing Page
 ![Landing Page](/Frontend/Vidora/Project_Screenshots/landing.jpg)
 
+### Authentication (Sign in / Sign up)
+| Sign In | Sign Up |
+|--------:|:-------|
+| ![Sign In](/Frontend/Vidora/Project_Screenshots/signin.jpg) | ![Sign Up](/Frontend/Vidora/Project_Screenshots/signup.jpg) |
+
+### Home / Dashboard
+![Home Page](/Frontend/Vidora/Project_Screenshots/home.jpg)
+
+### Meeting History (single & list)
+
+![History List](/Frontend/Vidora/Project_Screenshots/history_list.jpg)
+
+### Pre-Join (camera preview)
+![Pre Join](/Frontend/Vidora/Project_Screenshots/prejoin.jpg)
+
+### Group Call (responsive grid)
+![Group Call Grid](/Frontend/Vidora/Project_Screenshots/group_grid.jpg)
+
+### Screen Sharing
+![Screen Share](/Frontend/Vidora/Project_Screenshots/screenshare.jpg)
+
+### In-call Chat & Screen Share side-by-side
+![Chat and Share](/Frontend/Vidora/Project_Screenshots/chat_and_share.jpg)
+
+---
 
 
 🧠 Tech Stack
