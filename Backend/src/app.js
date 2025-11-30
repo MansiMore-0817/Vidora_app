@@ -1,6 +1,6 @@
 import express from 'express';
 import {createServer} from "node:http";
-
+import { fileURLToPath } from "url";
 import {Server} from "socket.io";
 import mongoose from "mongoose";
 import cors from "cors";
@@ -20,6 +20,29 @@ app.use(express.json({limit: "40kb"}));
 app.use(express.urlencoded({limit:"40kb", extended: true}));
 
 app.use("/api/v1/users", userRoutes);
+
+
+// serve frontend (after your API routes)
+import path from "path";
+import fs from "fs";
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
+const frontendDist = path.join(__dirname, '..', 'Frontend', 'dist');
+
+if (fs.existsSync(frontendDist)) {
+  // serve static files
+  app.use(express.static(frontendDist));
+
+  // serve index.html for all other routes (so SPA routing works)
+  app.get('*', (req, res) => {
+    // skip API routes if you use /api prefix
+    if (req.path.startsWith('/api') || req.path.startsWith('/socket.io')) {
+      return res.status(404).end();
+    }
+    res.sendFile(path.join(frontendDist, 'index.html'));
+  });
+}
 
 
 const start = async () => {

@@ -16,7 +16,10 @@ import ChatIcon from "@mui/icons-material/Chat";
 import io from "socket.io-client";
 import styles from "../styles/videoComponent.module.css";
 
-const server_url = "http://localhost:8000";
+
+// const server_url = "http://localhost:8000";
+const BACKEND_URL = import.meta.env.VITE_BACKEND_URL || window.location.origin;
+
 
 var connections = {};
 
@@ -457,7 +460,12 @@ function VideoMeetComp() {
   };
 
   let connectToSocketServer = () => {
-    socketRef.current = io(server_url);
+    // socketRef.current = io(server_url);
+    socketRef.current = io(BACKEND_URL, {
+  path: "/socket.io",
+  transports: ["websocket", "polling"],
+  withCredentials: true,
+});
 
     console.log("Attempting to connect to socket server:", server_url);
 
