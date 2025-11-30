@@ -30,14 +30,16 @@ Before deploying, you'll need to set these environment variables in Render:
 #### Option A: Single Service (Recommended - Frontend + Backend together)
 
 1. **Create a new Web Service** on Render
-2. **Connect your repository**
+2. **Connect your repository**: `https://github.com/MansiMore-0817/Vidora_app`
 3. **Configure the service:**
    - **Name**: `vidora-app` (or your preferred name)
-   - **Root Directory**: `Vidora_app` (or leave blank if root is Vidora_app)
+   - **Root Directory**: Leave **BLANK** or set to `.` (the repository root IS Vidora_app)
    - **Environment**: `Node`
-   - **Build Command**: `npm install` (or `npm run postinstall` if using root package.json)
+   - **Build Command**: `npm install` (automatically runs postinstall script)
    - **Start Command**: `npm start` (runs from root, which starts the backend)
    - **Plan**: Choose based on your needs (Free tier available)
+   
+   **IMPORTANT**: If you see an error about "Vidora_app" directory missing, it means Render is looking for a subdirectory. In that case, leave Root Directory **completely blank** - the repository root already contains all the files.
 
 4. **Add Environment Variables:**
    - `MONGO_URI`: Your MongoDB connection string

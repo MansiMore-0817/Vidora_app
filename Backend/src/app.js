@@ -35,11 +35,14 @@ if (fs.existsSync(frontendDist)) {
   app.use(express.static(frontendDist));
 
   // serve index.html for all other routes (so SPA routing works)
-  app.get('*', (req, res) => {
-    // skip API routes if you use /api prefix
+  // Express 5.x compatible catch-all route (must be last, after all API routes)
+  app.use((req, res) => {
+    // This only runs if no previous route matched
+    // Skip API routes and socket.io (shouldn't reach here, but safety check)
     if (req.path.startsWith('/api') || req.path.startsWith('/socket.io')) {
-      return res.status(404).end();
+      return res.status(404).json({ error: 'Not found' });
     }
+    // serve index.html for SPA routing
     res.sendFile(path.join(frontendDist, 'index.html'));
   });
 }

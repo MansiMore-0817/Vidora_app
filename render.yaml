@@ -2,7 +2,6 @@ services:
   - type: web
     name: vidora-app
     env: node
-    rootDir: .
     buildCommand: npm install
     startCommand: npm start
     envVars:
