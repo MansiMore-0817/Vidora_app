@@ -2,7 +2,7 @@
   "name": "vidora-fullstack",
   "private": true,
   "scripts": {
-    "postinstall": "npm --prefix Backend install && npm --prefix Frontend install && npm --prefix Frontend run build",
+    "postinstall": "npm --prefix Backend install && npm --prefix Frontend/Vidora install && npm --prefix Frontend/Vidora run build",
     "start": "npm --prefix Backend start"
   }
 }

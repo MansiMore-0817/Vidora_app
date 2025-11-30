@@ -28,7 +28,7 @@ import fs from "fs";
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-const frontendDist = path.join(__dirname, '..', 'Frontend', 'dist');
+const frontendDist = path.join(__dirname, '..', '..', 'Frontend', 'Vidora', 'dist');
 
 if (fs.existsSync(frontendDist)) {
   // serve static files

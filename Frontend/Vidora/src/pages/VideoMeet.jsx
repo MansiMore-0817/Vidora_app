@@ -460,14 +460,13 @@ function VideoMeetComp() {
   };
 
   let connectToSocketServer = () => {
-    // socketRef.current = io(server_url);
     socketRef.current = io(BACKEND_URL, {
-  path: "/socket.io",
-  transports: ["websocket", "polling"],
-  withCredentials: true,
-});
+      path: "/socket.io",
+      transports: ["websocket", "polling"],
+      withCredentials: true,
+    });
 
-    console.log("Attempting to connect to socket server:", server_url);
+    console.log("Attempting to connect to socket server:", BACKEND_URL);
 
     socketRef.current.on("signal", gotMessageFromServer);
 
